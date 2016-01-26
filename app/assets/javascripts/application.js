@@ -14,3 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function overlay(start_date) {
+	el = document.getElementById("overlay");
+	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+   	document.getElementById("event_start_time").value = start_date;
+   	document.getElementById("event_end_time").value = start_date;
+}

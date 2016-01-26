@@ -34,4 +34,43 @@
       <%= link_to event.title, event %>
     </div>
   <% end %>
+  <div class="button_add">
+    <a href='#' onclick="overlay('<%= date %>')">+</a>
+  </div>
 <% end %>
+
+<div id="overlay">
+  <div>
+    Click here to [<a href='#' onclick='overlay()'>close</a>]
+    <%= form_tag(controller: "events", action: "create", method: "post") do %>
+      <div class="field">
+        <%= label_tag "title" %><br>
+        <%= text_field :event, :title %>
+      </div>
+      <div class="field">
+        <%= label_tag "description" %><br>
+        <%= text_area :event, :description %>
+      </div>
+      <div class="field">
+        <%= label_tag "start_time" %><br>
+        <%= text_field :event, :start_time %>
+      </div>
+      <div class="field">
+        <%= label_tag "end_time" %><br>
+        <%= text_field :event, :end_time %>
+      </div>
+      <div class="field">
+        <%= label_tag "rule" %><br>
+        Empty:<%= radio_button("event", "rule", "empty") %>
+        Daily:<%= radio_button("event", "rule", "daily") %>
+        Weekly:<%= radio_button("event", "rule", "weekly") %>
+        Monthly:<%= radio_button("event", "rule", "monthly") %>
+        Yearly:<%= radio_button("event", "rule", "early") %>
+      </div>
+  
+      <div class="field">
+        <%= submit_tag "Create" %>
+      </div>
+    <% end %>
+  </div>
+</div>
