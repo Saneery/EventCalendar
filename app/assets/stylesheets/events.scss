@@ -1,0 +1,37 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.has-events {
+	background: rgba(50,205,50,0.4);
+}
+.past + .has-events{
+	background: rgba(50,205,50,0.2);
+}
+
+
+
+.simple-calendar{
+ 	.today{
+		border: 1px double black;
+	}
+	th {
+    		background-color: #4CAF50;
+    		color: white;
+	}
+	.prev-month, .next-month{
+		color: gray;
+	}
+}
+.list {
+	border-collapse: collapse;
+	th {
+		background-color: #4CAF50;
+    		color: white;
+	}
+	td, th {
+		border-bottom: 1px solid #ddd;
+	}
+}
+
+
