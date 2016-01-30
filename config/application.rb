@@ -30,7 +30,7 @@ module SimpleCalendar
   class MonthCalendar < SimpleCalendar::Calendar
     private
 
-      def sorted_events #Лучше пройтись один раз по ивентам, чем в каждой дате опять проходить по каждым ивентам
+      def sorted_events
         events = options.fetch(:events, []).sort_by(&attribute)
         sorted = {}
         events.each do | event |
